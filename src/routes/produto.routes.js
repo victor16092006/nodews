@@ -2,11 +2,18 @@ const express = require("express");
 
 const router = express.Router();
 
-const controller = 
-   require("../controler/produto.controller");
+const controller = require("../controler/produto.controller");
 
 router.get("/", controller.listar);
+
 router.get("/:id", controller.buscarPorId);
+
 router.post("/", controller.criar);
+
+router.put("/:id", controller.atualizar);
+
+router.patch("/:id", controller.atualizarParcial);
+
+router.delete("/:id", controller.excluir);
 
 module.exports = router;
